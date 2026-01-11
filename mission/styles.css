@@ -1,0 +1,70 @@
+/* Global page setup */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+}
+
+/* Centered content block */
+.page {
+  max-width: 650px;       /* matches screenshot width */
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Header section */
+.title-block {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  margin: 0 0 8px;
+}
+
+
+.title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: #006EB6;
+
+}
+
+/* Paragraphs and list */
+.content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+ol {
+  padding-left: 22px;
+  margin-bottom: 40px;
+}
+
+ol li {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Logo box with image */
+.logo-box {
+  width: 120px;          /* adjust if needed */
+  margin-left: auto;     /* pushes to right side */
+  margin-top: 20px;
+}
+
+.logo-box {
+  width: 120px;        /* or whatever size you want */
+  margin: 20px auto 0; /* THIS centers the whole box */
+}
+
+.logo-box img {
+  width: 100%;
+  display: block;
+}
