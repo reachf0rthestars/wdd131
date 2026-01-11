@@ -21,14 +21,14 @@ body {
   margin-bottom: 40px;
 }
 
-.subtitle {
+.title {
   font-size: 2rem;
   letter-spacing: 0.12em;
   margin: 0 0 8px;
 }
 
 
-.title {
+.author {
   font-size: 1rem;
   text-transform: uppercase;
   margin: 0;
