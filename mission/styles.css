@@ -1,11 +1,11 @@
-/* Global page setup */
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: var(--background);
+  color: var(--text);
   font-family: "Times New Roman", serif;
-  color: #000;
   font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Centered content block */
@@ -67,4 +67,15 @@ ol li {
 .logo-box img {
   width: 100%;
   display: block;
+}
+/* Light mode (default) */
+:root {
+  --background: #ffffff;
+  --text: #000000;
+}
+
+/* Dark mode */
+.dark {
+  --background: #1a1a1a;
+  --text: #ffffff;
 }
