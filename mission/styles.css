@@ -1,3 +1,22 @@
+
+:root {
+  --background: #ffffff;
+  --text: #000000;
+}
+
+
+.dark {
+  --background: #333;
+  --text: #ffffff;
+}
+
+.dark .author {
+  color: #4da8ff; 
+
+
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -8,14 +27,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Centered content block */
 .page {
-  max-width: 650px;       /* matches screenshot width */
+  max-width: 650px;
   margin: 60px auto;
   padding: 0 20px;
 }
 
-/* Header section */
 .title-block {
   text-align: center;
   margin-bottom: 40px;
@@ -27,16 +44,14 @@ body {
   margin: 0 0 8px;
 }
 
-
 .author {
   font-size: 1rem;
   text-transform: uppercase;
   margin: 0;
   color: #006EB6;
-
 }
 
-/* Paragraphs and list */
+
 .content p {
   line-height: 1.6;
   margin-bottom: 20px;
@@ -52,33 +67,13 @@ ol li {
   line-height: 1.5;
 }
 
-/* Logo box with image */
-.logo-box {
-  width: 120px;          /* adjust if needed */
-  margin-left: auto;     /* pushes to right side */
-  margin-top: 20px;
-}
 
 .logo-box {
-  width: 120px;        /* or whatever size you want */
-  margin: 20px auto 0; /* THIS centers the whole box */
+  width: 120px;
+  margin: 20px auto 0;
 }
 
 .logo-box img {
   width: 100%;
   display: block;
-}
-/* Light mode (default) */
-:root {
-  --background: #ffffff;
-  --text: #000000;
-}
-
-/* Dark mode */
-.dark {
-  --background: #333;
-  --text: #ffffff;
-}
-.dark .author {
-  color: #4da8ff; /* brighter blue for contrast */
 }
