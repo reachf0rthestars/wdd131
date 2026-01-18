@@ -76,6 +76,9 @@ ol li {
 
 /* Dark mode */
 .dark {
-  --background: #1a1a1a;
+  --background: #333;
   --text: #ffffff;
+}
+.dark .author {
+  color: #4da8ff; /* brighter blue for contrast */
 }
