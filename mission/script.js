@@ -1,6 +1,6 @@
 const themeSelect = document.querySelector("#theme-select");
 const body = document.body;
-const logo = document.querySelector("#logo");
+const logo  = document.querySelector("#logo");
 
 themeSelect.addEventListener("change", function () {
   const theme = themeSelect.value;
@@ -12,4 +12,6 @@ themeSelect.addEventListener("change", function () {
     body.classList.remove("dark");
     logo.src = "images/byui-logo-blue.webp";   // blue logo for light mode
   }
+
+
 });
