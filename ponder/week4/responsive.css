@@ -54,17 +54,44 @@ section {
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
+
 nav.hide {
   display: none;
 }
 
+/* MOBILE MENU STYLE */
+nav {
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 12px 0;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+nav a:last-child {
+  border-bottom: none;
+}
+
+footer {
+  text-align: center;
+}
+
+/* DESKTOP MENU STYLE */
 @media screen and (min-width: 700px) {
   nav.hide {
     display: block;
   }
 
+  .menu-btn {
+    display: none;
+  }
+
   nav {
-    text-align: right;
+    text-align: center;
     display: block;
   }
 
@@ -73,8 +100,10 @@ nav.hide {
     padding: 20px;
     border-bottom: none;
   }
+}
 
-  .menu-btn {
-    display: none;
+@media screen and (min-width: 1000px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
