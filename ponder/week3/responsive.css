@@ -61,7 +61,7 @@ main {
         display: none;
     }
     nav a {
-        display: block;
+        display: inline;
     }
     nav {
         text-align: center;
