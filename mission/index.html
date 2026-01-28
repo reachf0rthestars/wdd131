@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BYU–Idaho Mission Statement" />
   <meta name="author" content="Addison" />
-  <title>BYU–Idaho Mission Statement</title><br>
+  <title>BYU–Idaho Mission Statement</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <header class="theme-header">
+    <label for="theme-select">Theme:</label>
+    <select id="theme-select">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </header>
+
   <main class="page">
     <header class="title-block">
       <h2 class="title">MISSION STATEMENT</h2>
@@ -50,7 +59,7 @@
       </ol>
 
       <div class="logo-box">
-        <img src="images/byui-logo-blue.webp" alt="BYU–Idaho logo">
+        <img id="logo" src="images/byui-logo-blue.webp" alt="BYU–Idaho logo">
       </div>
     </section>
   </main>
