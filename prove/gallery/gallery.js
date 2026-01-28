@@ -8,7 +8,8 @@ const closeButton = modal.querySelector('.close-viewer');
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
-    
+    modalImage.src = e.target.src.replace("-sm", "-full");
+    modal.showModal();
 // Code to show modal  - Use event parameter 'e'   
     
 }
@@ -23,4 +24,15 @@ modal.addEventListener('click', (event) => {
         modal.close();
     }
 });
+document.addEventListener('keydown', (event) => {
+  if (event.key === "Escape") {
+    modal.close();
+  }
+});
           
+function openModal(e) {
+  if (e.target.tagName === "IMG") {
+    modalImage.src = e.target.src.replace("-sm", "-full");
+    modal.showModal();
+  }
+}

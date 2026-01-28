@@ -7,7 +7,7 @@ h1 {
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1 fr;
+    grid-template-columns: 1fr;
 }
 figure img {
     width: 250px;
