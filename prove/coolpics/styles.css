@@ -139,13 +139,6 @@ img {
 }
 
 /* MODAL */
-dialog {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.75);
-  border: none;
-  padding: 0;
-}
 
 dialog img {
   display: block;
@@ -162,4 +155,15 @@ dialog img {
   background: white;
   border: none;
   cursor: pointer;
+}
+
+dialog {
+  position: fixed;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background: transparent; /* prevents double background */
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
 }
