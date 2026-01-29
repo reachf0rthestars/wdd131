@@ -1,43 +1,55 @@
+// MENU BUTTON
+const menu = document.querySelector('nav');
+const button = document.querySelector('.menu-btn');
 
+button.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+// WINDOW RESIZE HANDLING
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1000) {
+    menu.classList.remove('show');
+  }
+});
+
+// VIEWER TEMPLATE FUNCTION
+function viewerTemplate(src, alt) {
+  return `
+    <img src="${src}" alt="${alt}">
+    <button class="close-viewer">X</button>
+  `;
+}
+
+// MODAL LOGIC
 const gallery = document.querySelector('.gallery');
 const modal = document.querySelector('dialog');
-const modalImage = modal.querySelector('img');
-const closeButton = modal.querySelector('.close-viewer');
 
-// Event listener for opening the modal
-gallery.addEventListener('click', openModal);
+gallery.addEventListener('click', (e) => {
+  if (e.target.tagName === "IMG") {
+    const smallSrc = e.target.getAttribute('src');
+    const alt = e.target.getAttribute('alt');
+    const fullSrc = smallSrc.replace("-sm", "-full");
 
-function openModal(e) {
-  const img = e.target;
-  const src = img.getAttribute('src');
-  const als = img.getAttribute('alt');
-  const full = src.replace('sm', 'full')
+    modal.innerHTML = viewerTemplate(fullSrc, alt);
+    modal.showModal();
 
-  modalImage.src = full;
-  modalImage.alt = alt;
-  modal.showModal();
-// Code to show modal  - Use event parameter 'e'   
-}
-// Close modal on button click
-closeButton.addEventListener('click', () => {
-    modal.close();
+    modal.querySelector('.close-viewer').addEventListener('click', () => {
+      modal.close();
+    });
+  }
 });
 
-// Close modal if clicking outside the image
+// CLOSE MODAL ON BACKGROUND CLICK
 modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.close();
-    }
+  if (event.target === modal) {
+    modal.close();
+  }
 });
+
+// ESC KEY CLOSE
 document.addEventListener('keydown', (event) => {
   if (event.key === "Escape") {
     modal.close();
   }
 });
-          
-function openModal(e) {
-  if (e.target.tagName === "IMG") {
-    modalImage.src = e.target.src.replace("-sm", "-full");
-    modal.showModal();
-  }
-}

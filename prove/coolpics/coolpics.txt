@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* HEADER */
+header {
+  background-color: #0a4a7a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* NAVIGATION — MOBILE DEFAULT */
+nav {
+  display: none;
+  background-color: #0a4a7a;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+nav a {
+  display: none;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+/* SHOW STATE — WORKS ON ALL SCREEN SIZES */
+nav.show {
+  display: block;
+}
+
+nav.show a {
+  display: block;
+}
+
+/* MAIN */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ddd;
+  margin-top: 1rem;
+}
+
+/* TABLET */
+@media screen and (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  nav {
+    display: flex;
+    position: static;
+    background: none;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  nav a {
+    display: block;
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}
+
+/* IMAGE STYLING */
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 4px solid white;
+  border-radius: 0;
+}
+
+/* MODAL */
+.close-viewer {
+  position: absolute;
+  top: 10vh;
+  right: 2vh;
+  padding: 3px 6px;
+  font-size: 1.5em;
+}
+
+dialog img {
+  width: 90%;
+  display: block;
+  margin: 20vh auto;
+}
+
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.75);
+}
+
+const gallery = document.querySelector('.gallery');
+const modal = document.querySelector('dialog');
+const modalImage = modal.querySelector('img');
+const closeButton = modal.querySelector('.close-viewer');
+
+// Event listener for opening the modal
+gallery.addEventListener('click', openModal);
+
+function openModal(e) {
+  const img = e.target;
+  const src = img.getAttribute('src');
+  const als = img.getAttribute('alt');
+  const full = src.replace('sm', 'full')
+
+  modalImage.src = full;
+  modalImage.alt = alt;
+  modal.showModal();
+// Code to show modal  - Use event parameter 'e'   
+}
+// Close modal on button click
+closeButton.addEventListener('click', () => {
+    modal.close();
+});
+
+// Close modal if clicking outside the image
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.close();
+    }
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === "Escape") {
+    modal.close();
+  }
+});
+          
+function openModal(e) {
+  if (e.target.tagName === "IMG") {
+    modalImage.src = e.target.src.replace("-sm", "-full");
+    modal.showModal();
+  }
+}
+
+/// menu button
+
+const menu = document.querySelector('nav');
+
+const button = document.querySelector('.menu-btn');
+button.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool Pics 📷</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="coolpics.js"></script>
+</head>
+<body>
+  <header>
+    
+    <h1>Cool Pics 📷</h1>
+    
+    <button class="menu-btn">
+      <h2>Menu</h2>
+    </button>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">People</a>
+      <a href="#">Places</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Current Work</h2>
+    <section class="gallery">
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+      <img src="images/norris-sm.jpg" alt="Cool pic" />
+    </section>
+  </main>
+
+  <footer>©2023 Not a real site 😊</footer>
+</body>
+</html>
