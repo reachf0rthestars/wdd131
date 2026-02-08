@@ -10,13 +10,11 @@ body {
   padding: 1rem;
 }
 
-/* HEADER — same on all screen sizes */
 header {
   width: 100%;
   padding-top: 1rem;
 }
 
-/* Title centered */
 .site-title {
   text-align: center;
   font-size: 2rem;
@@ -24,15 +22,13 @@ header {
   margin-bottom: 0.5rem;
 }
 
-/* Top divider */
 .header-divider {
   width: auto;
   height: 2px;
-  background:  #ddd851;   /* matches screenshot */
+  background: #ddd851;
   margin-bottom: 0.5rem;
 }
 
-/* Nav ALWAYS right aligned */
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -42,11 +38,10 @@ header {
 
 .nav a {
   text-decoration: none;
-  color: #b30000;        /* red like screenshot */
+  color: #b30000;
   font-weight: 600;
 }
 
-/* CONTENT LAYOUT */
 .review {
   display: grid;
   gap: 1rem;
@@ -55,9 +50,9 @@ header {
 .metadata {
   list-style: none;
   display: flex;
-  flex-direction: column;   /* stack vertically */
-  align-items: flex-end;    /* right‑align text on mobile */
-  gap: 0.25rem;             /* small spacing between lines */
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
 }
 
 .cover {
@@ -66,8 +61,9 @@ header {
   display: block;
   margin: 0 auto;
 }
-
-
+.book-title{
+  color: #b30000;
+}
 
 @media (min-width: 700px) {
   .header-divider-extra {
@@ -107,7 +103,7 @@ header {
   }
 
   .header-divider:last-of-type {
-    grid-area: divider;   /* this is the bar above the author */
+    grid-area: divider;
   }
 
   .author {
@@ -116,15 +112,32 @@ header {
     margin-top: 1rem;
   }
 }
+
 @media (max-width: 699px) {
   .header-divider-extra {
     display: block;
   }
 }
+
 .header-divider-extra {
   width: auto;
   height: 2px;
   background: #ddd851;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: white;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  color: black;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
 }
