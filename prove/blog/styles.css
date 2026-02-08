@@ -26,7 +26,7 @@ header {
 
 /* Top divider */
 .header-divider {
-  width: 110%;
+  width: auto;
   height: 2px;
   background:  #ddd851;;   /* matches screenshot */
   margin-bottom: 0.5rem;
@@ -75,8 +75,7 @@ header {
     grid-template-areas:
       "meta meta"
       "cover title"
-      "cover summary"
-      "cover author";
+      "cover summary";
   }
 
   .metadata {
@@ -95,10 +94,6 @@ header {
   .summary {
     grid-area: summary;
   }
-
-  .author {
-    grid-area: author;
-  }
 }
 .header-divider-extra {
   width: 110%;
@@ -107,13 +102,47 @@ header {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   display: none;
-}
+}@media (min-width: 700px) {
+  .review {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+      "meta title"
+      "meta cover"
+      "meta summary"
+      "meta author";   /* author now has a defined place */
+    column-gap: 2rem;
+  }
 
-@media (max-width: 699px) {
-  .header-divider-extra {
-    display: block; /* only shows on mobile */
+  .metadata {
+    grid-area: meta;
+    align-items: flex-start;
+    border-right: 2px solid #ddd851;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    height: 100%;          /* keeps the vertical line full height */
+  }
+
+  .cover-figure {
+    grid-area: cover;
+  }
+
+  .book-title {
+    grid-area: title;
+    color: rgb(157, 3, 3);
+  }
+
+  .summary {
+    grid-area: summary;
+  }
+
+  .author {
+    grid-area: author;
+    text-align: left;
+    margin-left: 0;
   }
 }
+
+
 .book-title {
   text-align: center;
 }
