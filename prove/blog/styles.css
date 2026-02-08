@@ -28,7 +28,7 @@ header {
 .header-divider {
   width: auto;
   height: 2px;
-  background:  #ddd851;;   /* matches screenshot */
+  background:  #ddd851;   /* matches screenshot */
   margin-bottom: 0.5rem;
 }
 
@@ -46,18 +46,17 @@ header {
   font-weight: 600;
 }
 
-
-
 /* CONTENT LAYOUT */
 .review {
   display: grid;
   gap: 1rem;
 }
+
 .metadata {
   list-style: none;
   display: flex;
   flex-direction: column;   /* stack vertically */
-  align-items: flex-end;    /* right‑align text */
+  align-items: flex-end;    /* right‑align text on mobile */
   gap: 0.25rem;             /* small spacing between lines */
 }
 
@@ -68,58 +67,30 @@ header {
   margin: 0 auto;
 }
 
-/* Desktop book layout */
+
+
 @media (min-width: 700px) {
-  .review {
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-      "meta meta"
-      "cover title"
-      "cover summary";
+  .header-divider-extra {
+    display: none;
   }
 
-  .metadata {
-    grid-area: meta;
-  }
-
-  .cover-figure {
-    grid-area: cover;
-  }
-
-  .book-title {
-    grid-area: title;
-    color: rgb(157, 3, 3);
-  }
-
-  .summary {
-    grid-area: summary;
-  }
-}
-.header-divider-extra {
-  width: 110%;
-  height: 2px;
-  background: #ddd851;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  display: none;
-}@media (min-width: 700px) {
   .review {
     grid-template-columns: 250px 1fr;
     grid-template-areas:
       "meta title"
       "meta cover"
       "meta summary"
-      "meta author";   /* author now has a defined place */
+      "divider divider"
+      "author author";
     column-gap: 2rem;
   }
 
   .metadata {
     grid-area: meta;
-    align-items: flex-start;
     border-right: 2px solid #ddd851;
     padding-right: 1rem;
     margin-right: 1rem;
-    height: 100%;          /* keeps the vertical line full height */
+    align-items: right;
   }
 
   .cover-figure {
@@ -135,14 +106,25 @@ header {
     grid-area: summary;
   }
 
+  .header-divider:last-of-type {
+    grid-area: divider;   /* this is the bar above the author */
+  }
+
   .author {
     grid-area: author;
-    text-align: left;
-    margin-left: 0;
+    text-align: center;
+    margin-top: 1rem;
   }
 }
-
-
-.book-title {
-  text-align: center;
+@media (max-width: 699px) {
+  .header-divider-extra {
+    display: block;
+  }
+}
+.header-divider-extra {
+  width: auto;
+  height: 2px;
+  background: #ddd851;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
