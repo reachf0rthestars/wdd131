@@ -1,0 +1,142 @@
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-rows: repeat(6, minmax(60px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  width:100%;
+  max-width: 550px;
+  margin:0 auto;
+}
+
+/* Shared box styles */
+.box {
+  font-size: 18px;
+   border-radius: 8px;
+}
+
+/* First box */
+.box-one {
+    background-color: #c8c8c8;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap:16px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Second box overlaps the first */
+.box-two {
+  grid-column: 2 / 5;
+  grid-row: 2 / 5;
+  background-color: #b4b4b4;
+  z-index: 1;
+  position:relative;
+}
+.main-button {
+  grid-column: 4 / 5;  
+  grid-row: 6;         
+  justify-self: center; 
+  align-self: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background-color: #6a6faa;
+  cursor: pointer;
+}
+
+.total-line{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-weight:bold;
+    padding: 18px;
+    font-size: 18px;
+}
+.card-emoji{
+    grid-column:2/3;
+    grid-row:1/2;
+    justify-self:end;
+    font-size:50px;
+    padding: 1px;
+}
+#creditcard{
+    grid-column: 1/2;
+    grid-row: 2;
+}
+#name{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+#cardExpiration{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column; 
+    gap: 6px;  
+
+}
+
+#cardExpiration .exp-inputs{
+    display: flex;
+    gap:10px
+}
+.mag-strip {
+    background-color: #000;
+    height: 50px;          /* adjust thickness */
+    width: 100%;
+    margin-top: 20px;      /* spacing from top */
+    border-radius: 4px;
+}
+.cvv-back {
+    position: absolute;
+    bottom: 20px;   /* distance from bottom */
+    right: 20px;    /* distance from right */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.cvv-back input {
+    width: 60px;        /* small like a real CVV box */
+    padding: 6px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.errors {
+    display: none;
+    background-color: #ffdddd;
+    color: #a30000;
+    border: 1px solid #a30000;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: pre-line;
+}
+.success {
+    display: none;
+    grid-column: 1 / -1;
+    background-color: #ddffdd;
+    color: #006600;
+    border: 1px solid #006600;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: pre-line;
+}

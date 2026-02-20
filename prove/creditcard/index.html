@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creditcard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<form class="grid-container" id="paymentForm" novalidate>
+
+    <section class="errors"></section>
+    <section class="success"></section>
+
+    <!-- FRONT OF CARD -->
+    <div class="box box-one">
+        <div class="total-line">TOTAL: $199</div>
+
+        <div class="card-emoji">💳</div>
+
+        <div id="creditcard">
+            <label id="cardNumberLabel">CARD NUMBER</label>
+            <input 
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="1234567891011020"
+                autocomplete="off"
+                inputmode="numeric"
+                pattern=".*"
+                required
+            >
+        </div>
+
+        <div id="name">
+            <label id="cardHolderLabel">CARD HOLDER</label>
+            <input 
+                type="text"
+                id="cardHolder"
+                name="cardHolder"
+                placeholder="John Doe"
+                aria-labelledby="cardHolderLabel"
+                required
+            >
+        </div>
+
+        <div id="cardExpiration">
+            <label id="expirationDate">EXPIRATION</label>
+            <input 
+                type="text"
+                id="month"
+                name="expMonth"
+                placeholder="MM"
+                autocomplete="off"
+                inputmode="numeric"
+                pattern=".*"
+                required
+            >
+            <input 
+                type="text"
+                id="year"
+                name="expYear"
+                placeholder="YY"
+                autocomplete="off"
+                inputmode="numeric"
+                pattern=".*"
+                required
+            >
+        </div>
+    </div>
+
+    <!-- BACK OF CARD -->
+    <div class="box box-two">
+        <div class="mag-strip"></div>
+
+        <div class="cvv-back">
+            <label for="cvvBack">CVC/CVV</label>
+            <input 
+                type="text"
+                id="cvvBack"
+                name="cvvBack"
+                placeholder="123"
+                autocomplete="off"
+                inputmode="numeric"
+                pattern=".*"
+                required
+            >
+        </div>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <button class="main-button" type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
