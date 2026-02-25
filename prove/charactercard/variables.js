@@ -1,4 +1,4 @@
-// Character object
+// Character object stuff
 const character = {
   name: "Snortleblat",
   class: "Swamp Beast Diplomat",
@@ -8,6 +8,11 @@ const character = {
   attacked: function () {
     this.health -= 20;
     if (this.health < 0) this.health = 0;
+
+    if (this.health === 0) {
+      alert("Character Died");
+    }
+
     renderStats();
   },
 
@@ -17,13 +22,13 @@ const character = {
   }
 };
 
-// Render stats into the HTML
+// HTML
 function renderStats() {
   document.querySelector("#level").textContent = character.level;
   document.querySelector("#health").textContent = character.health;
 }
 
-// Button listeners
+// Button
 document.querySelector("#attackBtn").addEventListener("click", function () {
   character.attacked();
 });
@@ -32,5 +37,5 @@ document.querySelector("#levelBtn").addEventListener("click", function () {
   character.levelUp();
 });
 
-// Initial render
+
 renderStats();
