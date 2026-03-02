@@ -40,8 +40,8 @@ margin-top: 50px;
     flex-wrap: wrap;
     justify-content: center;
 }
-.gallery section{
-    flex:1 1 460px;
+.gallery > *{
+    flex:0 1 460px;
 }
 
 
