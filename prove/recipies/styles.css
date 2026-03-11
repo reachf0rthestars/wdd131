@@ -157,3 +157,7 @@ h1 {
     justify-content: space-between;
   }
 }
+.recipe{
+  padding: 30px;
+  margin: 100px;
+}
