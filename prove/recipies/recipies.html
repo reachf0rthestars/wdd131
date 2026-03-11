@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Recipe Book – Apple Crisp</title>
+  <title>Recipe Book</title>
   <meta name="description" content="A simple, delicious apple crisp recipe from RecipeBook.">
 
   <!-- Open Graph -->
@@ -38,13 +38,18 @@
     </div>
 
     <div class="search">
-      <input type="text" placeholder="Find a recipe">
+     <input id="search" type="text" placeholder="Find a recipe">
       <div class="vline"></div>
-      <img src="images/search.svg" alt="search icon" width="40" height="40">
+      <button class="icon-btn"><img src="images/search.svg" alt="search icon" width="40" height="40"></button>
+      <script src="script.js" defer></script>
     </div>
   </header>
 
-  <main class="recipe">
+  <main>
+  <div id="recipe"></div>
+</main>
+<!-- </main>
+<main class="recipe">
     <img 
       src="images/apple-crisp.jpg" 
       alt="Apple crisp dessert" 
@@ -69,7 +74,7 @@
         This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.
       </p>
     </div>
-  </main>
+  </main> -->
 
   <footer class="footer">
     <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
