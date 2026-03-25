@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>Productivity Timer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">Productivity Time!</div>
+    <nav class="main-nav">
+      <a href="index.html">How It Works</a>
+      <a href="timer.html" class="active">Timer</a>
+    </nav>
+  </header>
+
+  <main class="work-area">
+
+    <div class="timer-panel">
+      <h2>Session Timer</h2>
+      <div class="timer-display">
+        <span class="time">25:00</span>
+      </div>
+      <div class="timer-controls">
+        <button class="btn-secondary">Start</button>
+        <button class="btn-secondary">Pause</button>
+        <button class="btn-secondary">Reset</button>
+      </div>
+    </div>
+
+    <div class="tasks-panel">
+      <h2>Task List</h2>
+
+      <form class="task-form">
+        <input type="text" placeholder="Add a new task..." />
+        <button type="submit" class="btn-primary">Add</button>
+      </form>
+
+      <ul class="task-list">
+        <li>
+          <span>Example task: Finish report</span>
+          <button class="remove-task">✕</button>
+        </li>
+        <li>
+          <span>Example task: Reply to emails</span>
+          <button class="remove-task">✕</button>
+        </li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Productivity Time</p>
+  </footer>
+</body>
+</html>

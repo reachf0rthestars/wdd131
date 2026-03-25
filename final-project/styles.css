@@ -1,0 +1,229 @@
+:root {
+  --color-primary: #061a40;
+  --color-secondary: #cfebdf;
+  --color-accent1: #9bc4cb;
+  --color-accent2: #e2fadb;
+  --color-text: #0b1220;
+  --color-bg: #ffffff;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+body {
+  margin: 0;
+  font-family: system-ui,"Segoe UI",sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10 rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 40px;
+}
+
+.main-nav a {
+  color: var(--color-bg);
+}
+
+.subtitles {
+  padding: 4rem 5vw 3rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary),
+    var(--color-accent2)
+  );
+}
+
+.subtitle-content {
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-family: "Lucida Console", monospace;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-primary,.btn-secondary {
+  border: none;
+  border-radius: 1000px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color:var(--color-bg);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent1);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--color-accent1);
+}
+
+/* Info cards */
+
+.info-grid {
+  padding: 2.5rem 5vw 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-accent1);
+}
+
+.info-card h2 {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Work area: timer + tasks */
+
+.work-area {
+  padding: 2.5rem 5vw 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.timer-panel,
+.tasks-panel {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-accent2);
+}
+
+.timer-panel h2,
+.tasks-panel h2 {
+  font-family: "Lucida Console", monospace;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.timer-display .time {
+  font-family: "Lucida Console", monospace;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Tasks */
+
+.task-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.task-form input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent1);
+  font-size: 0.95rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.task-list span {
+  flex: 1;
+  margin-right: 0.75rem;
+}
+
+.remove-task {
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 1rem 5vw 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Layout for larger screens */
+
+@media (min-width: 768px) {
+  .work-area {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: flex-start;
+  }
+}
