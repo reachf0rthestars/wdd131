@@ -12,7 +12,9 @@
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: system-ui,"Segoe UI",sans-serif;
@@ -60,7 +62,8 @@ body {
 
 .subtitles img {
   height:auto;
-  width:auto;
+  max-width:100%;
+  display:block;
 }
 .hero h1 {
   font-family: "Lucida Console", monospace;
@@ -257,6 +260,16 @@ main {
   flex: 1;
 }
 /* Layout for larger screens */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 @media (min-width: 768px) {
   .work-area {
