@@ -36,7 +36,12 @@ startbtn.addEventListener('click', (e) => {
     }
   }, 1000);
 });
-
+timerinput.addEventListener('keydown', (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    startbtn.click(); // simulate pressing Start
+  }
+});
 pausebtn.addEventListener('click', (e) => {
   e.preventDefault();
   clearInterval(countdown);
