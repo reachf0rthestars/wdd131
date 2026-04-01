@@ -187,20 +187,24 @@ const announcer = document.getElementById('timer-announcer') || null;
 let countdown = null;
 let countdownend = null;
 function mintosec(val) {
+  const s = String(val || '').trim();
+
+  // mm:ss support
+  if (s.includes(':')) {
+    const parts = s.split(':').map(Number);
+    if (parts.length === 2 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
+      return Math.max(0, parts[0] * 60 + parts[1]);
+    }
+  }
+
+  const n = Number(s);
+
   if (!Number.isFinite(n) || n <= 0) {
     alert("Please enter a valid number of minutes.");
     return 0;
   }
-  const s = String(val || '').trim();
-  // mm:ss
-  if (s.includes(':')) {
-    const parts = s.split(':').map(p => Number(p));
-    if (parts.length === 2 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
-      return Math.max(0, Math.floor(parts[0]) * 60 + Math.floor(parts[1]));
-    }
-  }
-  const n = Number(s);
-  return Number.isFinite(n) && n > 0 ? Math.floor(n * 60) : 0;
+
+  return Math.floor(n * 60);
 }
 
 function cleartimer() {
