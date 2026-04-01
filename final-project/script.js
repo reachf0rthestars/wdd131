@@ -189,7 +189,7 @@ let countdownend = null;
 function mintosec(val) {
   const s = String(val || '').trim();
 
-  // mm:ss support
+  // Support mm:ss format
   if (s.includes(':')) {
     const parts = s.split(':').map(Number);
     if (parts.length === 2 && Number.isFinite(parts[0]) && Number.isFinite(parts[1])) {
