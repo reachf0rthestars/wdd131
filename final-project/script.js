@@ -1,4 +1,4 @@
-const timerinput = document.querySelector('.minutes-input');
+const timerinput = document.querySelector('.timer-form input');
 const startbtn = document.querySelector('.startbtn');
 const pausebtn = document.querySelector('.pausebtn');
 
@@ -36,12 +36,7 @@ startbtn.addEventListener('click', (e) => {
     }
   }, 1000);
 });
-timerinput.addEventListener('keydown', (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    startbtn.click(); // simulate pressing Start
-  }
-});
+
 pausebtn.addEventListener('click', (e) => {
   e.preventDefault();
   clearInterval(countdown);
@@ -50,7 +45,12 @@ pausebtn.addEventListener('click', (e) => {
   const remaining = Math.floor((endTime - Date.now()) / 1000);
   timerinput.value = formattime(remaining);
 });
-
+timerinput.addEventListener('keydown', (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    startbtn.click(); // simulate pressing Start
+  }
+});
 
 
 const newtask = document.querySelector('.task-form');
