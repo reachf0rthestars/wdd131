@@ -272,23 +272,3 @@ if (timerinput && startbtn) {
 loadtasks();
 rendertasks();
 
-
-
-// function createtask(str){
-//   const html = `<li>
-//           <span>${str}</span>
-//           <button class="remove-task">✕</button>
-//         </li>`
-//   return html
-// }
-
-// taskbtn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   let text = newtask.querySelector('input').value
-//   tasklist.insertAdjacentHTML('beforeend', createtask(text));
-// })
-// tasklist.addEventListener('click', (e) => {
-//   if (e.target.classList.contains('remove-task')) {
-//     e.target.closest('li').remove();
-//   }
-// });
