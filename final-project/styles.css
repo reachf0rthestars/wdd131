@@ -48,6 +48,8 @@ body {
 }
  
 .subtitles {
+  display: flex;
+  align-items: center;   
   padding: 4rem 5vw 3rem;
   background: linear-gradient(
     135deg,
@@ -56,10 +58,10 @@ body {
   );
 }
 
-.subtitle-content {
-  max-width: 640px;
+.subtitles img {
+  height:auto;
+  width:auto;
 }
-
 .hero h1 {
   font-family: "Lucida Console", monospace;
   font-size: clamp(2.2rem, 4vw, 3rem);
@@ -185,21 +187,21 @@ body {
   display: flex;
   gap: 0.75rem;
   padding:20px;
+  align-items: center;
+  flex-wrap:nowrap;
 }
-
-.task-form input[type="text"] {
-  flex: 10;
+.task-form input[type="text"],
+.timer-form input[type="text"] {
+  flex: 1;
+  min-width: 0; /* CRITICAL: prevents overflow */
   border-radius: 999px;
   border: 1px solid var(--color-accent1);
   font-size: 25px;
   text-align: center;
 }
-.timer-form input[type="text"]{
-  flex: 10;
-  border-radius: 999px;
-  border: 1px solid var(--color-accent1);
-  font-size: 25px;
-  text-align: center;
+.task-form button,
+.timer-form button {
+  flex-shrink: 0; /* keeps button visible */
 }
 
 .task-list {
