@@ -21,12 +21,15 @@
 
   <main class="work-area">
 
-    <div class="timer-panel">
-      <div class='timer-text'><h2>Session Timer</h2><h4> - (in mineuts)</h4></div>
+    <div class="timer-panel"><div id="timer-announcer" aria-live="polite" class="sr-only"></div>
+      <div class='timer-text'><h2>Session Timer</h2><p> - (in minutes)</p></div>
+
+
       <div class="timer-display">
-        <form class="timer-form">
-          <input type="text" value="25" />
-        </form>
+      <form class="timer-form">
+        <label for="timer-input" class="sr-only">Timer minutes</label>
+        <input id="timer-input" type="text" value="25">
+      </form>
       </div>
       <div class="timer-controls">
       <button class="btn-secondary startbtn" type="button">Start</button>
@@ -38,7 +41,8 @@
       <h2>Task List</h2>
 
       <form class="task-form ">
-        <input type="text" placeholder="Add a new task..." />
+        <label for="task-input" class="sr-only">Add a new task</label>
+        <input id="task-input" type="text" placeholder="Add a new task...">
         <button type="submit" class="btn-primary taskbtn">Add</button>
       </form>
 

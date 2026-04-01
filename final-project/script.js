@@ -186,7 +186,11 @@ const announcer = document.getElementById('timer-announcer') || null;
 
 let countdown = null;
 let countdownend = null;
-function parsetominutestoseconds(val) {
+function mintosec(val) {
+  if (!Number.isFinite(n) || n <= 0) {
+    alert("Please enter a valid number of minutes.");
+    return 0;
+  }
   const s = String(val || '').trim();
   // mm:ss
   if (s.includes(':')) {
@@ -239,7 +243,7 @@ function pausertimer() {
 if (startbtn && timerinput) {
   startbtn.addEventListener('click', function (e) {
     e.preventDefault();
-    const secs = parsetominutestoseconds(timerinput.value);
+    const secs = mintosec(timerinput.value);
     if (secs <= 0) return;
     starttimerfromseconds(secs);
   });
