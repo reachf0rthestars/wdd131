@@ -1,4 +1,4 @@
-const timerinput = document.querySelector('.timer-form input');
+const timerinput = document.querySelector('.minutes-input');
 const startbtn = document.querySelector('.startbtn');
 const pausebtn = document.querySelector('.pausebtn');
 
