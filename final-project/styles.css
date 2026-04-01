@@ -99,7 +99,7 @@ body {
   background-color: var(--color-accent1);
 }
 
-/* Info cards */
+/* fact cards */
 
 .how-grid {
   padding: 2.5rem 5vw 3rem;
@@ -121,7 +121,7 @@ body {
   font-size: 25px;
 }
 
-/* Work area: timer + tasks */
+/*timerandtasks */
 
 .work-area {
   display: grid;
@@ -166,12 +166,12 @@ body {
   justify-content: center;
 }
 
-/* Tasks */
+/* timer and list stuff */
 
 .timer-text {
   display: flex;
   flex-direction: row;
-  align-items: baseline; /* looks cleaner with h2 + h4 */
+  align-items: baseline;
   gap: 10px;
 }
 
