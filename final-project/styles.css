@@ -51,7 +51,8 @@ body {
  
 .subtitles {
   display: flex;
-  align-items: center;   
+  flex-direction: column; /* mobile default */
+  align-items: center;
   padding: 4rem 5vw 3rem;
   background: linear-gradient(
     135deg,
@@ -276,5 +277,9 @@ main {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: flex-start;
   }
+    .subtitles {
+    flex-direction: row;
+  }
+
   
 }
